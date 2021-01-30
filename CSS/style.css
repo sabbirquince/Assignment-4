@@ -9,7 +9,7 @@
 body {
     height: 100vh;
     font-family: 'Cabin', sans-serif;
-    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../images/ship.png");
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../images/ship.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
