@@ -8,7 +8,7 @@ firstClassIncrease.addEventListener("click", function () {
 
   let subtotal = subTotalDeclare("subtotal");
   calcVat(subtotal);
-  calcTotal();
+  let totalBill = calcTotal();
 });
 
 const firstClassDecrease = document.getElementById("firstClassDecrease");
@@ -19,7 +19,7 @@ firstClassDecrease.addEventListener("click", function () {
 
   let subtotal = subTotalDeclare("subtotal");
   calcVat(subtotal);
-  calcTotal();
+  let totalBill = calcTotal();
 });
 
 // ECONOMY CLASS EVENT HANDLER
@@ -32,7 +32,7 @@ economyClassIncrease.addEventListener("click", function () {
 
   let subtotal = subTotalDeclare("subtotal");
   calcVat(subtotal);
-  calcTotal();
+  let totalBill = calcTotal();
 });
 
 const economyClassDecrease = document.getElementById("economyClassDecrease");
@@ -43,7 +43,27 @@ economyClassDecrease.addEventListener("click", function () {
 
   let subtotal = subTotalDeclare("subtotal");
   calcVat(subtotal);
-  calcTotal();
+  let totalBill = calcTotal();
+});
+
+// SUBMIT BUTTON EVENT HANDLER
+
+const submitButton = document.getElementById("submitButton");
+
+submitButton.addEventListener("click", function () {
+  let captureMainContent = document.getElementsByClassName("main-content")[0];
+  let captureConfirmSection = document.getElementsByClassName(
+    "confirmation-hidden"
+  )[0];
+
+  captureMainContent.style.display = "none";
+  captureConfirmSection.setAttribute("class", "confirmation");
+
+  confirmationInfo(
+    "confirmFirstClassTickets",
+    "confirmEconomyClassTickets",
+    "confirmTotalBill"
+  );
 });
 
 // FUNCTIONS
@@ -88,4 +108,23 @@ function calcTotal() {
   let subtotal = parseFloat(document.getElementById("subtotal").innerHTML);
   let VAT = parseFloat(document.getElementById("vat").innerHTML);
   document.getElementById("totalPrice").innerHTML = subtotal + VAT;
+}
+
+function confirmationInfo(countId1, countId2, billId) {
+  const firstClassTicketCount = parseFloat(
+    document.getElementById("firstClassTicketCount").value
+  );
+  document.getElementById(countId1).innerHTML = firstClassTicketCount;
+
+  const economyClassTicketCount = parseFloat(
+    document.getElementById("economyClassTicketCount").value
+  );
+  document.getElementById(countId2).innerHTML = economyClassTicketCount;
+
+  const totalPrice = parseFloat(
+    document.getElementById("totalPrice").innerHTML
+  );
+
+  const totalBill = document.getElementById(billId);
+  totalBill.innerHTML = totalPrice;
 }

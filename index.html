@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curise Booking</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/fontawesome.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
 </head>
 
 <body>
@@ -62,12 +68,16 @@
 
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
+                    <div class="labelBox">
+                        <label for="">First Class ($150)</label>
+                        <label for=""> Price $<span id="firstClassTicketPrice">0</span></label>
+                    </div>
                     <input id="firstClassTicketCount" class="inp-style inp-width" type="number" name="" value="0">
-                    <label for=""> Price $ <span id="firstClassTicketPrice">0</span></label>
+
                 </div>
                 <div class="plus-minus-btn">
-                    <p><span id="firstClassIncrease">+</span> <span id="firstClassDecrease">-</span></p>
+                    <p><span id="firstClassIncrease"><i class="far fa-plus-square"></i></span> <span
+                            id="firstClassDecrease"><i class="far fa-minus-square"></i></span></p>
                 </div>
             </div>
 
@@ -75,12 +85,16 @@
 
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
+                    <div class="labelBox">
+                        <label for="">Economy ($100)</label>
+                        <label for=""> Price $<span id="economyClassTicketPrice">0</span></label>
+                    </div>
                     <input id="economyClassTicketCount" class="inp-style inp-width" type="number" name="" value="0">
-                    <label for=""> Price $ <span id="economyClassTicketPrice">0</span></label>
+
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="economyClassIncrease">+</span> <span id="economyClassDecrease">-</span> </p>
+                    <p> <span id="economyClassIncrease"><i class="far fa-plus-square"></i></span> <span
+                            id="economyClassDecrease"><i class="far fa-minus-square"></i></span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -107,13 +121,47 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$<span id="totalPrice">0</span></p>
+                        <p class="totalPrice">$<span id="totalPrice">0</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="submitButton" class="btn-style">Book Now</button>
         </div>
+
     </main>
+
+    <section class=" confirmation-hidden container">
+        <div class="confirm-message">
+            <div><i class="far fa-check-circle"></i></div>
+            <h3>Confirmation</h3>
+            <p>You have successfully booked tickets for your voyage with Cruise Queen. Please be patient for the
+                confirmation mail with the tickets. Have a good journey. Thanks for
+                choosing us.</p>
+
+            <div class="confirmation-payment">
+                <h4>
+                    <span>Total First Class Tickets $</span>
+                    <span id="confirmFirstClassTickets">0</span>
+
+                </h4>
+
+                <h4>
+                    <span>Total Economy Class Tickets $</span>
+                    <span id="confirmEconomyClassTickets">0</span>
+
+                </h4>
+
+                <h4>
+                    <span>Total Bill $</span>
+                    <span id="confirmTotalBill">0</span>
+
+                </h4>
+
+            </div>
+        </div>
+
+
+    </section>
 
     <script src="script.js"></script>
 </body>
