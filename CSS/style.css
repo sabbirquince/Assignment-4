@@ -57,7 +57,8 @@ a.active {
 }
 
 .booking-content {
-    color: lightgrey;
+    color: white;
+    line-height: 1.5;
     width: 100%;
     float: left;
     margin-left: 50px;
@@ -71,8 +72,7 @@ a.active {
 }
 
 .booking-form {
-
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.753);
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
@@ -121,7 +121,7 @@ a.active {
 }
 
 label:nth-child(2) {
-    background-color: rgba(166, 222, 226, 0.938);
+    background-color: rgba(125, 229, 236, 0.938);
     padding: 1px 2.5px;
     border-radius: 2px;
 }
@@ -165,7 +165,7 @@ label:nth-child(2) {
 }
 
 .totalPrice {
-    background-color: rgba(166, 222, 226, 0.938);
+    background-color: rgba(125, 229, 236, 0.938);
     padding: 1px 2.5px;
     border-radius: 2px;
 }
@@ -187,7 +187,7 @@ label:nth-child(2) {
 }
 
 .confirm-message {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.705);
     color: black;
     width: 36%;
     font-size: 1.2rem;
